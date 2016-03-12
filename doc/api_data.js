@@ -1,0 +1,598 @@
+define({ "api": [
+  {
+    "type": "DELETE",
+    "url": "/image/all/",
+    "title": "Delete all student images",
+    "name": "DeleteAllImage",
+    "group": "Delete",
+    "description": "<p>Delete all image of a student.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>The student ID.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\"id\": \"001\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "success",
+            "description": "<p>ok</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "filename": "handlers/image.py",
+    "groupTitle": "Delete",
+    "sampleRequest": [
+      {
+        "url": "https://104.130.24.127:8888/image/all/"
+      }
+    ],
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Invalid request syntax or missing data.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "DELETE",
+    "url": "/image/",
+    "title": "Delete an image",
+    "name": "DeleteImage",
+    "group": "Delete",
+    "description": "<p>Delete an image of a student.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "image_id",
+            "description": "<p>The image identifier.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\"image_id\": \"x3f32gs33fewesf\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "success",
+            "description": "<p>ok</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "filename": "handlers/image.py",
+    "groupTitle": "Delete",
+    "sampleRequest": [
+      {
+        "url": "https://104.130.24.127:8888/image/"
+      }
+    ],
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Invalid request syntax or missing data.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "DELETE",
+    "url": "/info/",
+    "title": "Delete a student",
+    "name": "DeleteStudent",
+    "group": "Delete",
+    "description": "<p>Delete a student record. All the images related to this student will also be deleted as well.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>The student ID.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\"id\": \"001\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "success",
+            "description": "<p>ok</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "filename": "handlers/info.py",
+    "groupTitle": "Delete",
+    "sampleRequest": [
+      {
+        "url": "https://104.130.24.127:8888/info/"
+      }
+    ],
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Invalid request syntax or missing data.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "POST",
+    "url": "/info/",
+    "title": "Create a student",
+    "name": "CreateStudent",
+    "group": "Insert",
+    "description": "<p>Create a student record.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>The student ID.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>The student name (optional).</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\"id\": \"001\", \"name\":\"jmei\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "success",
+            "description": "<p>ok</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "409",
+            "description": "<p>Inserting student ID have already exist.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Invalid request syntax or missing data.</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "filename": "handlers/info.py",
+    "groupTitle": "Insert",
+    "sampleRequest": [
+      {
+        "url": "https://104.130.24.127:8888/info/"
+      }
+    ]
+  },
+  {
+    "type": "POST",
+    "url": "/image/",
+    "title": "Insert an image",
+    "name": "InsertImage",
+    "group": "Insert",
+    "description": "<p>Insert an image.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>The student ID.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "url",
+            "description": "<p>The image URL or absolute local file path.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\"id\": \"001\", \"name\":\"jmei\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "success",
+            "description": "<p>ok</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "409",
+            "description": "<p>Inserting image ID have already exist.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Invalid request syntax or missing data.</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "filename": "handlers/image.py",
+    "groupTitle": "Insert",
+    "sampleRequest": [
+      {
+        "url": "https://104.130.24.127:8888/image/"
+      }
+    ]
+  },
+  {
+    "type": "GET",
+    "url": "/image/all/",
+    "title": "List all student images",
+    "name": "ListAllImage",
+    "group": "List",
+    "description": "<p>List the content of the table containing the student ID's and picID's.</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "students",
+            "description": "<p>List of student.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "students.id",
+            "description": "<p>The student identifier.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Array",
+            "optional": false,
+            "field": "students.images",
+            "description": "<p>List of student images ids.</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "filename": "handlers/image.py",
+    "groupTitle": "List",
+    "sampleRequest": [
+      {
+        "url": "https://104.130.24.127:8888/image/all/"
+      }
+    ]
+  },
+  {
+    "type": "GET",
+    "url": "/info/all/",
+    "title": "List all student information",
+    "name": "ListAllInfo",
+    "group": "List",
+    "description": "<p>List the content of the table containing the student infomation.</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>The student identifier.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>The student name.</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "filename": "handlers/info.py",
+    "groupTitle": "List",
+    "sampleRequest": [
+      {
+        "url": "https://104.130.24.127:8888/info/all/"
+      }
+    ]
+  },
+  {
+    "type": "GET",
+    "url": "/image/info/",
+    "title": "List one student image URLs",
+    "name": "ListOneImageURLs",
+    "group": "List",
+    "description": "<p>List the images path names of one student.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>A student identifier.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Array",
+            "optional": false,
+            "field": "images",
+            "description": "<p>List of image URL.</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "filename": "handlers/image.py",
+    "groupTitle": "List",
+    "sampleRequest": [
+      {
+        "url": "https://104.130.24.127:8888/image/info/"
+      }
+    ]
+  },
+  {
+    "type": "GET",
+    "url": "/image/",
+    "title": "List one student images",
+    "name": "ListOneImages",
+    "group": "List",
+    "description": "<p>List the content of the table containing the student ID's and picID's.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>A student identifier.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Array",
+            "optional": false,
+            "field": "images",
+            "description": "<p>List of image IDs.</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "filename": "handlers/image.py",
+    "groupTitle": "List",
+    "sampleRequest": [
+      {
+        "url": "https://104.130.24.127:8888/image/"
+      }
+    ],
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Invalid request syntax or missing data.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "GET",
+    "url": "/info/",
+    "title": "List one student information",
+    "name": "ListOneInfo",
+    "group": "List",
+    "description": "<p>List information of one student.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>A student identifier.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>A student identifier.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>A student name.</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "filename": "handlers/info.py",
+    "groupTitle": "List",
+    "sampleRequest": [
+      {
+        "url": "https://104.130.24.127:8888/info/"
+      }
+    ],
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Invalid request syntax or missing data.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "GET",
+    "url": "/",
+    "title": "Check server status.",
+    "description": "<p>Ping to the server.</p>",
+    "name": "Ping",
+    "group": "Test",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "success",
+            "description": "<p>ok</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "filename": "handlers/main.py",
+    "groupTitle": "Test",
+    "sampleRequest": [
+      {
+        "url": "https://104.130.24.127:8888/"
+      }
+    ]
+  }
+] });
